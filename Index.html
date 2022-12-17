@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Assets/css/all.min.css">
+    <link rel="stylesheet" href="./Assets/css/style.css">
+    <title>Multiple Step | Form</title>
+</head>
+<body>
+    <div class="container">
+        <div class="formBox">
+            <div class="cardForm">
+                <div class="sideBar">
+                    <div class="progressForm">
+                        <!-- <img src="./Assets/images/bg-sidebar-desktop.svg" alt="sidebar"> -->
+                    </div>
+                    <div class="numHead">
+                        <div class="num color">
+                            <p class="numCount numCount-active">1</p>
+                            <div class="numInfo">
+                                <h3>Step 1</h3>
+                                <p>Your info</p>
+                            </div>
+                        </div>
+                        <div class="num">
+                            <p class="numCount">2</p>
+                            <div class="numInfo">
+                                <h3>Step 2</h3>
+                                <p>Select plan</p>
+                            </div>
+                        </div>
+                        <div class="num">
+                            <p class="numCount">3</p>
+                            <div class="numInfo">
+                                <h3>Step 3</h3>
+                                <p>Add-ons</p>
+                            </div>
+                        </div>
+                        <div class="num">
+                            <p class="numCount">4</p>
+                            <div class="numInfo">
+                                <h3>Step 4</h3>
+                                <p>Summary</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Forms -->
+                <div class="formContainer">
+                    <form class="form1 formprogress formprogress-active">
+                        <div class="form1Box">
+                            <div class="formTitle">
+                                <div class="info">
+                                    <h1>Personal info</h1>
+                                    <p>Please provide your name, email address and phone number.</p>
+                                </div>
+                                <label for="fullname">
+                                    Name
+                                    <span id="name-error"></span>
+                                    <input type="text" name="fullname" id="contact-name" placeholder="e.g Stephen King" onkeyup="validateName()">
+                                </label>
+                                <label for="email">
+                                    Email Address
+                                    <input type="email" name="email" id="contact-email" placeholder="e.g stephenking@lorem.com" onkeyup="validateEmail()">
+                                    <span id="email-error"></span>
+                                </label>
+                                <label for="number">
+                                    Phone Number
+                                    <input type="tel" name="number" id="contact-phone" class="last" placeholder="e.g +1 234 567 890" onkeyup="validatePhone()">
+                                    <span id="phone-error"></span>
+                                </label>
+                                <small id="submit-error"></small>
+                            </div>
+                        </div>
+                        <div class="button">
+                            <button type="submit" class="btn" id="nextStep" onclick="return validateForm()">Next Step</button>
+                            
+                        </div>
+                    </form>
+
+                    <form class="form2 formprogress">
+                        <div class="form2Box">
+                            <div class="formTitle">
+                                <div class="info">
+                                    <h1>Select your plan</h1>
+                                    <p>You have the options of monthly or yearly billing.</p>
+                                </div>
+                                <div class="planBox">
+                                    <div class="planTitle">
+                                        <div class="planCard">
+                                            <div class="planboxes">
+                                                <div class="planImg">
+                                                    <img src="./Assets/images/icon-arcade.svg" alt="">
+                                                </div>
+                                                <div class="title">
+                                                    <p>Arcade</p>
+                                                    <small>$9/mo</small>
+                                                </div>
+                                            </div>
+                                            <div class="planboxes">
+                                                <div class="planImg">
+                                                    <img src="./Assets/images/icon-advanced.svg" alt="">
+                                                </div>
+                                                <div class="title">
+                                                    <p>Advance</p>
+                                                    <small>$12/mo</small>
+                                                </div>
+                                            </div>
+                                            <div class="planboxes">
+                                                <div class="planImg">
+                                                    <img src="./Assets/images/icon-pro.svg" alt="">
+                                                </div>
+                                                <div class="title">
+                                                    <p>Pro</p>
+                                                    <small>$15/mo</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="toggle">
+                                            <p>Monthly</p>
+                                            <label class="switch">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                            </label>
+                                            <p>Yearly</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="buttons">
+                            <button type="submit" class="btn" id="prevStep">Go Back</button>
+                            <button type="submit" class="btn" id="nextStep">Next Step</button>
+                        </div> 
+                    </form>
+
+                    <form class="form3 formprogress">
+                        <div class="form3Box">
+                            <div class="formTitle">
+                                <div class="info">
+                                    <h1>Pick add-ons</h1>
+                                    <p>Add-ons help enhance your gming experience.</p>
+                                </div>
+                                <div class="services">
+                                    <div class="serviceBox">
+                                        <label class="checkContainer">
+                                            <input type="checkbox" checked="checked">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <div class="descript">
+                                            <div class="descriptInfo">
+                                                <h4>Online service</h4>
+                                                <p>Access to multiplayer games</p>  
+                                            </div>
+                                            <div class="money">
+                                                <a href="#">+$1/mo</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="serviceBox">
+                                        <label class="checkContainer">
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <div class="descript">
+                                            <div class="descriptInfo">
+                                                <h4>Larger storage</h4>
+                                                <p>Extra 1TB of cloud save</p>  
+                                            </div>
+                                            <div class="money">
+                                                <a href="#">+$3/mo</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="serviceBox">
+                                        <label class="checkContainer">
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <div class="descript">
+                                            <div class="descriptInfo">
+                                                <h4>Customizable Profile</h4>
+                                                <p>Custom theme on your profile</p>  
+                                            </div>
+                                            <div class="money">
+                                                <a href="#">+$5/mo</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="buttons">
+                            <button type="submit" class="btn" id="prevStep">Go Back</button>
+                            <button type="submit" class="btn" id="nextStep">Next Step</button>
+                        </div>
+                    </form>
+
+                    <form class="form4 formprogress">
+                        <div class="form4Box">
+                            <div class="formTitle">
+                                <div class="info">
+                                    <h1>Finishing up</h1>
+                                    <p>Double-check everything looks OK before confirming.</p>
+                                </div>
+                                <div class="services">
+                                    <div class="serviceBox">
+                                        <div class="descriptPay">
+                                            <div id="payinfo">
+                                                <div class="payInfo">
+                                                    <div id="pay">
+                                                        <h4>Arcade(Monthly)</h4>
+                                                        <a href="#">Change</a> 
+                                                    </div>
+                                                    <div id="money">
+                                                        <a href="#">+$9/mo</a>
+                                                    </div> 
+                                                </div>
+                                                <hr>
+                                            </div>
+                                            <div class="payInfo">
+                                                <div class="pay">
+                                                    <h4>Online service</h4>
+                                                </div>
+                                                <div class="money">
+                                                    <a href="#">+$1/mo</a>
+                                                </div> 
+                                            </div>
+                                            <div class="payInfo">
+                                                <div class="pay">
+                                                    <h4>Large Storage</h4>
+                                                </div>
+                                                <div class="money">
+                                                    <a href="#">+$2/mo</a>
+                                                </div> 
+                                            </div>
+                                            
+                                            
+                                        </div>
+                                        <div class="total">
+                                            <p>Total(per month)</p>
+                                            <a href="#">+$12/mo</a>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttons">
+                            <button type="submit" class="btn" id="prevStep">Go Back</button>
+                            <button type="submit" class="btn" id="nextStep">Confirm</button>
+                        </div>
+                    </form>
+
+                    <form action="" class="confrim formprogress">
+                        <div class="confirmBox">
+                            <div class="planImg">
+                                <img src="./Assets/images/icon-thank-you.svg" alt="">
+                            </div>
+                            <h3>Thank you!</h3>
+                            <p>Thanks for confirming your subscription! 
+                                We hope you have fun using our platform. 
+                                If you ever need support, please feel free 
+                                to email us at <a href="#">support@loremgaming.com</a>.
+                            </p>
+                        </div>
+                    </form>
+                </div>
+                <!-- Forms End -->
+            </div>
+        </div>
+    </div>
+
+    <script src="./Assets/formApp/formApp.js"></script>
+</body>
+</html>

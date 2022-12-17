@@ -1,0 +1,745 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Ubuntu", sans-serif;
+    text-decoration: none;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Ubuntu", sans-serif;
+    text-decoration: none;
+  }
+  
+  
+  :root{
+    /* Primary */
+    --Marine: hsl(213, 96%, 18%);
+    --Purplish: hsl(243, 100%, 62%);
+    --Pastel: hsl(228, 100%, 84%);
+    --Light: hsl(206, 94%, 87%);
+    --Strawberry: hsl(354, 84%, 57%);
+      /*Neutral */
+    --Cool: hsl(231, 11%, 63%);
+    --Light2: hsl(229, 24%, 87%);
+    --Magnolia: hsl(217, 100%, 97%);
+    --Alabaster: hsl(231, 100%, 99%);
+    --White: hsl(0, 0%, 100%);
+    /* Fonts */
+    /* --Family: [Ubuntu](https://fonts.google.com/specimen/Ubuntu); */
+    --Weights: 400, 500, 700;
+    /* Shadow */
+    --shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    --shadow2:rgba(0, 0, 0, 0.04) 0px 3px 5px;
+  }
+  p{
+    color: var(--Cool);
+  }
+  h1{
+    color: var(--Marine);
+    margin-bottom: 0.5rem;
+  }
+  
+  html{
+    transition: all .5s ease linear;
+  }
+  body{
+    background-color: var(--Magnolia);
+  }
+  .btn{
+    background-color: var(--Marine);
+    color: var(--White);
+    border: none;
+    border-radius:5px;
+    width:100px;
+    height:50px;
+    cursor: pointer;
+    outline: none;
+    /* margin-top:4rem; */
+    display:inline-block;
+}
+.button{
+    display: flex;
+    align-items: center;
+    justify-content:flex-end;
+    width:100%;
+    margin-top:5rem;
+}
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top:8rem;
+}
+#prevStep{
+    background-color:transparent;
+    color: var(--Cool);
+    text-align: left;
+    font-weight: bold;
+}
+#prevStep:hover{
+    color: var(--Marine);
+}
+.btn:hover{
+    background-color: var(--Purplish);
+}
+  .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  .formBox{
+    background-color: var(--White);
+    box-shadow: var(--shadow2);
+    width:58rem;
+    height:37rem;
+    border-radius:10px;
+  }
+
+  .cardForm{
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+    gap:4rem;
+    padding: 1rem 4rem 1rem 1rem;
+    width:100%;
+    height:100%;
+  }
+  .sideBar{
+    position: relative;
+    width:60%;
+    height:100%;
+    border-radius:10px;
+  }
+  .sideBar .progressForm{
+    background-image: url(../images/bg-sidebar-desktop.svg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+    height:100%;
+    border-radius:10px;
+  }
+  .sideBar .numHead{
+    position: absolute;
+    top:2rem;
+    left:3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+  .numHead .num{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:1rem;
+  }
+  .num .numCount{
+    border:1px solid var(--White);
+    width:35px;
+    height:35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--White);
+  }
+  .color .numCount{
+    background-color: var(--White);
+    color: var(--Marine);
+  }
+  .numInfo{
+    color:var(--Cool);
+    text-transform: uppercase;
+    font-size:0.8rem;
+    display: flex;
+    flex-direction: column;
+    row-gap:.3rem;
+  }
+  .numInfo h3{
+    font-size: 0.8rem;
+    font-weight: lighter;
+  }
+  .numInfo p{
+    font-weight: bold;
+    font-size:.9rem;
+    color:var(--White);
+  }
+  .formContainer{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  .form1{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+  }
+  .formprogress .formTitle{
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+  }
+  .form1 .formTitle{
+    position: relative;
+  }
+  #submit-error{
+    position: absolute;
+    right:2%;
+    bottom:-1.5rem;
+    color: red;
+    display: block;
+  }
+  .form1 .formTitle label{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap:.3rem;
+    width:30rem;
+  }
+  label{
+    color: var(--Marine);
+  }
+  label span{
+    position: absolute;
+    right: 0;
+    font-size: 12px;
+    color: red;
+  }
+  label span i{
+    color:green;
+}
+  label input{
+    padding:15px 10px;
+    border-radius:5px;
+    background-color:var(--White);
+    border:1px solid var(--Cool);
+    color: var(--Marine);
+    outline: none;
+    transition: all .5s ease;
+  }
+  label input::placeholder{
+    color: var(--Cool);
+    font-weight: bolder;
+  }
+  label input:focus{
+    border:1px solid var(--Purplish);
+    transform: scaleX(1.01);
+  }
+  .form2{
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+  }
+  .form2Box .planCard{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap:1rem;
+  }
+  .form2Box .planTitle{
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+  }
+  .form2Box .planCard .planboxes{
+    width:150px;
+    height:150px;
+    background-color:var(--White);
+    border-radius:5px;
+    box-shadow: var(--shadow2);
+    border:1px solid var(--Cool);
+    cursor: pointer;
+    transition: all .5s ease;
+ }
+ .planCard .planboxes:hover{
+    transform: scale(.99);
+    border:1px solid var(--Purplish);
+    background-color: var(--Magnolia);
+ } 
+ .form2Box .planImg{
+    width:40px;
+ }
+ .planboxes{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap:2.5rem;
+    color: var(--Cool);
+}
+.planboxes .title p{
+    color: var(--Marine);
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+}
+.toggle{
+    background-color: var(--Magnolia);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap:1rem;
+    padding: 1rem 0;
+    border-radius:5px;
+    box-shadow: var(--shadow2);
+}
+/* Toggle switch */
+.toggle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap:1rem;
+    background-color: var(--Alabaster);
+    padding:15px 20px;
+    border-radius:5px;
+  }
+  .switch {
+    position: relative;
+    display: inline-block;
+    width:52px;
+    height:21px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  .slider:before {
+    position: absolute;
+    content: "";
+    height:18px;
+    width:18px;
+    left: 4px;
+    bottom:2px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  input:checked + .slider {
+    background-color:var(--Marine);
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  
+
+  .form3,
+  .form4,
+  .confirm{
+    width: 100%;
+  }
+.form3Box{
+    display: flex;
+    flex-direction: column;
+    gap:1.3rem;
+}
+.form3 .buttons{
+    margin:6rem 0 0 0;
+}
+.form3 .services{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width:100%;
+  }
+.form3 .serviceBox{
+    display: flex;
+    align-items: center;
+    gap:1.5rem;
+    padding:20px 15px;
+    background-color:var(--White);
+    border:1px solid var(--Cool);
+    border-radius:5px;
+    transition: all .5s ease;
+    box-shadow:var(--shadow2);
+  }
+.form3 .serviceBox:hover{
+    border:1px solid var(--Purplish);
+    background-color: var(--Magnolia);
+    transform: scaleX(.99);
+  }
+  .form3 .serviceBox label input{
+    font-size:2rem;
+  }
+ .serviceBox .descript{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+ .serviceBox .descriptInfo h4{
+    color: var(--Marine);
+    margin-bottom:.2rem;
+  }
+ .serviceBox .descriptInfo p{
+    color: var(--Cool);
+    font-size:.9rem;
+  }
+ .serviceBox .money a{
+    color: var(--Purplish);
+  }
+  /* Custom Checkbox */
+  .checkContainer{
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  /* Hide the browser's default checkbox */
+  .checkContainer input{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height:20px;
+    width:20px;
+    border-radius:3px;
+    background-color: #eee;
+    border:1px solid var(--Cool);
+  }
+  /* On mouse-over, add a grey background color */
+  .checkContainer:hover input ~ .checkmark {
+    background-color:var(--Light);
+  }
+  /* When the checkbox is checked, add a blue background */
+  .checkContainer input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  } 
+  
+  /* Show the checkmark when checked */
+  .checkContainer input:checked ~ .checkmark:after {
+    display: block;
+  } 
+  
+  /* Style the checkmark/indicator */
+  .checkContainer .checkmark:after {
+    left:6px;
+    top:1.5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  /* foom4 */
+
+  .form4Box{
+    display: flex;
+    flex-direction: column;
+    gap:1.5rem;
+  }
+  .form4 .serviceBox{
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+  }
+  .descriptPay{
+    background-color: var(--Magnolia);
+    border-radius:10px;
+  }
+  .form4 hr{
+    margin: 0 1rem;
+  }
+  .form4 #pay h4{
+    margin-bottom:.2rem;
+  }
+  .form4 #pay a:hover{
+    text-decoration: underline;
+    color: var(--Purplish);
+  }
+  .payInfo,
+  .total{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding:1rem;
+  }
+  .pay h4{
+    color:var(--Cool);
+    font-weight: lighter;
+  }
+  .form4 .money a{
+    color:#666;
+    font-size: .8rem;
+    font-weight: bold;
+  }
+  .form4 #money a{
+    color: var(--Marine);
+    font-weight: bolder;
+  }
+  
+  .total p{
+    color: var(--Cool);
+  }
+  .total a{
+    color: var(--Purplish);
+    font-weight: bold;
+  }
+  /* Javascript steps for forms */
+.formprogress{
+    display: none;
+    animation:animate .5s;
+    transition: animation .5s;
+  }
+.formprogress-active{
+    display:block;
+  }
+.num .numCount-active{
+    background-color:var(--Pastel);
+    color:var(--Marine);
+}
+@keyframes animate{
+    from{
+      transform: scaleX(1, 0);
+      opacity: 0;
+    }
+    to{
+      transform: scale(1, 1);
+      opacity:1;
+    }
+  }
+  .confirmBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:1rem;
+  }
+  .confirmBox p{
+    width:75%;
+    font-size:13.5px;
+    text-align: center;
+  }
+  .confirmBox a{
+    color: var(--Cool);
+  }
+  .confirmBox a:hover{
+    color: var(--Purplish);
+    text-decoration: underline;
+  }
+
+
+  /* Responsiveness */
+  @media only screen and (max-width:768px){
+    .cardForm{
+      position: relative;
+      padding: 0;
+      border-radius:10px;
+      flex-direction: column;
+      background-color: var(--Light2);
+    }
+    .formBox {
+      width:44rem;
+      height:45rem;
+    }
+    .sideBar{
+      height:15rem;
+    }
+    .sideBar,
+    .sideBar .progressForm{
+      border-bottom-left-radius:0px;
+      border-bottom-right-radius: 0px;
+      width: 100%;
+
+    }
+    .sideBar .progressForm{
+      background-position: bottom 10% right 10%;
+    }
+    .sideBar .numHead{
+      left: 30%;
+      top:2rem;
+      flex-direction: row;
+    }
+    .numInfo{
+      display: none;
+    }
+    .formContainer{
+      border-radius:10px;
+      position: absolute;
+      width:35rem;
+      top:4rem;
+      padding: 2rem 0 0 0;
+    }
+    .formprogress .formTitle,
+    .confirmBox{
+      background-color: var(--White);
+      padding:1.5rem;
+      border-radius:10px;
+    }
+    .form1 .formTitle{
+      padding:1.5rem 1.5rem 3rem 1.5rem;
+    }
+    .serviceBox .descript{
+      justify-content:space-between;
+      align-items: center;
+    }
+    .button{
+      margin-top: 2rem;
+    }
+    .buttons{
+      margin-top:6.3rem;
+      margin-bottom: 0;
+    } 
+    .form3 .buttons{
+      margin-top:3.8rem;
+    }
+    .form4 .buttons{
+      margin-top:5.8rem;
+    }
+    
+  }
+@media only screen and (max-width:426px){
+  .button{
+    margin-top: 2rem;
+  }
+  .buttons{
+    margin-top:4.5rem;
+    margin-bottom: 0;
+  } 
+  .form3 .buttons{
+    margin-top:4.5rem;
+  }
+  .form4 .buttons{
+    margin-top:4.8rem;
+  }
+  .formContainer{
+    width:85%;
+  }
+  .sideBar .numHead{
+    left: 25%;
+  }
+  .form2Box .planCard{
+    display: flex;
+    flex-direction: column;
+    gap:.5rem;
+  }
+  .form2Box .planCard .planboxes{
+    width: 100%;
+    height:65px;
+    align-items: center;
+    flex-direction: row;
+    gap:1rem;
+  }
+  .form2Box .planImg img{
+    width:35px;
+  }
+  h1{
+    font-size:1.2rem;
+  }
+  .formTitle .info p{
+    font-size: 0.9rem;
+  }
+  .formBox{
+    /* width:23rem; */
+    height:50rem;
+  }
+  .form1 .formTitle label{
+    width: 100%;
+  }
+  .serviceBox .descriptInfo h4 {
+    font-size: 0.8rem;
+  }
+  .serviceBox .descriptInfo p {
+    font-size: .7rem;
+  }
+  .form3 .serviceBox{
+    gap: .5rem;
+  }
+  .serviceBox .money a {
+    font-size: 0.8rem;
+  }
+  .form3 .serviceBox{
+    padding: 25px 15px;
+  }
+  .form4 .serviceBox{
+    gap:2rem;
+  }
+  .form2Box .planTitle {
+    gap:1rem;
+  }
+}
+@media only screen and (max-width:376px){
+  .sideBar .numHead{
+    left: 22%;
+  }
+  .buttons{
+    margin-top:3.5rem;
+    margin-bottom: 0;
+  } 
+  .form3 .buttons{
+    margin-top:3.5rem;
+  }
+  .form4 .buttons{
+    margin-top:4.8rem;
+  }
+  .formContainer{
+    width:90%;
+  }
+}
+
+
+
+
+
+
+
+
